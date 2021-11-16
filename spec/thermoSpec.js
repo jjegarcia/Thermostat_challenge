@@ -7,7 +7,7 @@ describe("Thermostat", function() {
   describe('Thermostat starts at 20 degrees', function(){
     it('starts at 20deg', function(){
       thermostat = new Thermostat();
-      expect(thermostat.temperature()).toEqual(20);
+      expect(thermostat.temperature).toEqual(20);
     });
   });
 

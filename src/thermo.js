@@ -1,9 +1,13 @@
 class Thermostat {
   
-    temperature() {
-    return 20 ;
+  constructor(temperature) { 
+  this.temperature = 20;
+  } 
+  
+  temperature() {
+    return this.temperature ;
   }
 
 }
 let thermo = new Thermostat();
-console.log(thermo.temperature());
+console.log(thermo.temperature);
