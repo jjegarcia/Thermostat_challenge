@@ -11,4 +11,20 @@ describe("Thermostat", function() {
     });
   });
 
+  describe('Can increase the temperature', function(){
+    it('increase temperature', function(){
+      thermostat = new Thermostat();
+      expect(thermostat.increase_temperature(5)).toEqual(25);
+    });
+  });
+
+  describe('Can increase the temperature', function(){
+    it('increase temperature', function(){
+      thermostat = new Thermostat();
+      thermostat.increase_temperature(5);
+      expect(thermostat.increase_temperature(5)).toEqual(30);
+    });
+  });
+
+
 });
