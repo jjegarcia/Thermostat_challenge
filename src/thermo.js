@@ -13,6 +13,11 @@ class Thermostat {
     return this.temperature;
   }
 
+  decrease_temperature(number) {
+    this.temperature -= number;
+    return this.temperature
+  }
+
 }
 let thermo = new Thermostat();
 console.log(thermo.temperature);
