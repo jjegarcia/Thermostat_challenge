@@ -29,5 +29,18 @@ describe("Thermostat", function() {
     });
   });
 
+  describe('The minimum temperature is 10', function() {
+    it('Has a min temperature of 10', function(){
+      expect(thermostat.MIN_TEMP).toEqual(10); 
+    })
+
+    it('has min temp of 10', function(){
+      for (let i = 0; i < 11; i++) {
+        thermostat.decrease_temperature(6);
+      }
+      expect(thermostat.temperature).toEqual(10); 
+    })
+  })
+
 
 });
