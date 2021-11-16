@@ -35,9 +35,16 @@ describe("Thermostat", function() {
     })
 
     it('has min temp of 10', function(){
-      for (let i = 0; i < 11; i++) {
-        thermostat.decrease_temperature(6);
-      }
+      thermostat.decrease_temperature(4);
+       console.log('1',thermostat.temperature);
+
+      thermostat.decrease_temperature(4);
+       console.log('2',thermostat.temperature);
+
+      thermostat.decrease_temperature(4);
+      console.log('3',thermostat.temperature);
+
+
       expect(thermostat.temperature).toEqual(10); 
     })
   })
