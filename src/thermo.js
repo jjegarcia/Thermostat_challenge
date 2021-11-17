@@ -11,11 +11,7 @@ class Thermostat {
         this.max_temperature = this.max_powersafe_temp;
     }
 
-    temperature() {
-        return this.temperature;
-    }
-
-    increase_temperature(number) {
+     increase_temperature(number) {
         this.temperature += number;
         return this.temperature;
     }
