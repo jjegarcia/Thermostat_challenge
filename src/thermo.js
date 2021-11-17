@@ -32,6 +32,11 @@ class Thermostat {
         this.set_max_temperature();
         return this.power_safe;
     }
+
+    reset_temperature() {
+        this.temperature = this.default_temperature
+        return this.temperature
+    }
 }
 
 let thermo = new Thermostat();
