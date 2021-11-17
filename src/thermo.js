@@ -1,34 +1,31 @@
 class Thermostat {
-  
-  constructor(temperature) { 
-  this.temperature = 20;
-  this.MIN_TEMP = 10;
-  } 
-  
-  temperature() {
-    return this.temperature ;
-  }
 
-  increase_temperature(number){
-   this.temperature += number;
-    return this.temperature;
-  }
+    constructor(temperature) {
+        this.temperature = 20;
+        this.MIN_TEMP = 10;
+    }
 
-  decrease_temperature(number) {
-    if (this.temperature > this.MIN_TEMP){
-      this.temperature -= number; 
-      return this.temperature 
+    temperature() {
+        return this.temperature;
     }
-    else if (this.temperature === this.MIN_TEMP) {
-        return this.MIN_TEMP
+
+    increase_temperature(number) {
+        this.temperature += number;
+        return this.temperature;
     }
-    else {
-      return this.MIN_TEMP;
+
+    decrease_temperature(number) {
+        const new_temperature = this.temperature - number;
+        if (new_temperature < this.MIN_TEMP) {
+            this.temperature = this.MIN_TEMP
+        } else {
+            this.temperature = new_temperature
+        }
+        return this.temperature
     }
-    
-  }
 
 }
+
 let thermo = new Thermostat();
 // console.log(thermo.temperature);
 // console.log(thermo.increase_temperature(5));

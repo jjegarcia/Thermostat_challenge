@@ -36,7 +36,7 @@ describe("Thermostat", function() {
 
     it('has min temp of 10', function(){
       for (let i = 0; i < 11; i++) {
-        thermostat.decrease_temperature(6);
+        thermostat.decrease_temperature(20);
       }
       expect(thermostat.temperature).toEqual(10); 
     })
