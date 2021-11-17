@@ -31,7 +31,7 @@ describe("Thermostat", function () {
 
     describe('The minimum temperature is 10', function () {
         it('Has a min temperature of 10', function () {
-            expect(thermostat.MIN_TEMP).toEqual(10);
+            expect(MIN_TEMP).toEqual(10);
         })
 
         it('has min temp of 10', function () {
@@ -71,6 +71,24 @@ describe("Thermostat", function () {
 
         it('reset will set 20 degrees', function () {
             expect(thermostat.reset_temperature()).toEqual(20);
+        })
+    })
+
+    describe('You can ask about the thermostat\'s current energy usage', function () {
+
+        it('< 18 is low-usage', function () {
+            thermostat.temperature=13;
+            expect(thermostat.energy_usage()).toEqual('low');
+        })
+
+        it('18-25 is medium-usage', function () {
+            thermostat.temperature=22;
+            expect(thermostat.energy_usage()).toEqual('medium');
+        })
+
+        it('25+ is high-usage', function () {
+            thermostat.temperature=22;
+            expect(thermostat.energy_usage()).toEqual('medium');
         })
     })
 

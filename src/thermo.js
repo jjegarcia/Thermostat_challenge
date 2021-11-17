@@ -1,14 +1,18 @@
+const LOW_USAGE_THRESHOLD = 18;
+const HIGH_USAGE_THRESHOLD = 26;
+const DEFAULT_TEMPERATURE = 20;
+const POWER_SAFE_DEFAULT = true;
+const MAX_NON_POWERSAFE_TEMP = 32;
+const MAX_POWERSAFE_TEMP = 25;
+const MIN_TEMP = 10;
+
+
 class Thermostat {
-    default_temperature = 20;
-    power_safe_default = true;
-    max_non_powersafe_temp = 32;
-    max_powersafe_temp = 25;
-    MIN_TEMP = 10;
 
     constructor(temperature) {
-        this.temperature = this.default_temperature;
-        this.power_safe = this.power_safe_default;
-        this.max_temperature = this.max_powersafe_temp;
+        this.temperature = DEFAULT_TEMPERATURE;
+        this.power_safe = POWER_SAFE_DEFAULT;
+        this.max_temperature = MAX_POWERSAFE_TEMP;
     }
 
     increase_temperature(number) {
@@ -18,12 +22,12 @@ class Thermostat {
 
     decrease_temperature(number) {
         const new_temperature = this.temperature - number;
-        this.temperature = (new_temperature < this.MIN_TEMP) ? this.MIN_TEMP : new_temperature;
+        this.temperature = (new_temperature < MIN_TEMP) ? MIN_TEMP : new_temperature;
         return this.temperature
     }
 
     set_max_temperature() {
-        this.max_temperature = (this.power_safe) ? this.max_powersafe_temp : this.max_non_powersafe_temp;
+        this.max_temperature = (this.power_safe) ? MAX_POWERSAFE_TEMP : MAX_NON_POWERSAFE_TEMP;
         return this.max_temperature;
     }
 
@@ -34,16 +38,17 @@ class Thermostat {
     }
 
     reset_temperature() {
-        this.temperature = this.default_temperature
+        this.temperature = DEFAULT_TEMPERATURE
         return this.temperature
     }
+
+    energy_usage() {
+        if (this.temperature < LOW_USAGE_THRESHOLD) {
+            return 'low';
+        }
+        if (LOW_USAGE_THRESHOLD < this.temperature < HIGH_USAGE_THRESHOLD) {
+            return 'medium';
+        }
+        return 'high';
+    }
 }
-
-let thermo = new Thermostat();
-// console.log(thermo.temperature);
-// console.log(thermo.increase_temperature(5));
-// console.log(thermo.increase_temperature(5));
-
-// console.log(thermo.decrease_temperature(5));
-// console.log(thermo.decrease_temperature(5));
-// console.log(thermo.increase_temperature(5));
