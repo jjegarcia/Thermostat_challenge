@@ -1,11 +1,12 @@
 class Thermostat {
-    max_non_powersafe_temp=32;
+    default_temperature = 20;
+    power_safe_default = true;
+    max_non_powersafe_temp = 32;
+    max_powersafe_temp = 25;
+    MIN_TEMP = 10;
 
     constructor(temperature) {
-        this.power_safe_default = true;
-        this.max_powersafe_temp = 25;
-        this.temperature = 20;
-        this.MIN_TEMP = 10;
+        this.temperature = this.default_temperature;
         this.power_safe = this.power_safe_default;
         this.max_temperature = this.max_powersafe_temp;
     }
@@ -32,8 +33,7 @@ class Thermostat {
     set_max_temperature() {
         if (this.power_safe) {
             this.max_temperature = this.max_powersafe_temp;
-        }
-        else{
+        } else {
             this.max_temperature = this.max_non_powersafe_temp;
         }
         return this.max_temperature;
