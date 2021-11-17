@@ -42,5 +42,29 @@ describe("Thermostat", function() {
     })
   })
 
+  describe('If power saving mode is on, the maximum temperature is 25 degrees', function() {
+
+    it('has default power saving on', function(){
+      expect(thermostat.power_safe).toEqual(true);
+    })
+
+    it('has default max temp of 25', function(){
+      expect(thermostat.max_temperature).toEqual(25);
+    })
+  })
+
+  it('has max temp of 25 if in powersafe mode', function(){
+    expect(thermostat.set_max_temperature()).toEqual(25);
+  })
+
+  it('clear powersafe mode', function(){
+
+    expect(thermostat.clear_powersafe()).toEqual(false);
+  })
+
+  it('has max temp of 32 if not in powersafe mode', function(){
+    thermostat.clear_powersafe();
+    expect(thermostat.set_max_temperature()).toEqual(32);
+  })
 
 });
