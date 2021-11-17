@@ -11,27 +11,19 @@ class Thermostat {
         this.max_temperature = this.max_powersafe_temp;
     }
 
-     increase_temperature(number) {
+    increase_temperature(number) {
         this.temperature += number;
         return this.temperature;
     }
 
     decrease_temperature(number) {
         const new_temperature = this.temperature - number;
-        if (new_temperature < this.MIN_TEMP) {
-            this.temperature = this.MIN_TEMP;
-        } else {
-            this.temperature = new_temperature;
-        }
+        this.temperature = (new_temperature < this.MIN_TEMP) ? this.MIN_TEMP : new_temperature;
         return this.temperature
     }
 
     set_max_temperature() {
-        if (this.power_safe) {
-            this.max_temperature = this.max_powersafe_temp;
-        } else {
-            this.max_temperature = this.max_non_powersafe_temp;
-        }
+        this.max_temperature = (this.power_safe) ? this.max_powersafe_temp : this.max_non_powersafe_temp;
         return this.max_temperature;
     }
 
