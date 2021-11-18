@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thermostat</title>
+    <link rel="stylesheet" href="./css/thermo_ui_style.css">
+</head>
+<body>
+<div>
+    <button id="up_button"> &#9650;</button>
+    <br>
+    <div>
+        <label for="diff"></label><select id="diff">
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+    </select>
+        <label for="temperature"></label><input id="temperature" type="text" value=20>
+    </div>
+    <button id="down_button"> &#x25BC;</button>
+    <br>
+</div>
+<br>
+<div>
+  <h2>PowerSafe</h2>
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label>
+</div>
+<div id="gauge-demo" class="gauge-container"></div>
+<script src="src/thermoUi.js"></script>
+</body>
+</html>
