@@ -43,7 +43,7 @@ class Thermostat {
     }
 
     reviewTemperature(new_temperature) {
-        this.temperature = (new_temperature > this.max_temperature) ? this.max_temperature : new_temperature;
+        this.temperature = (new_temperature > this.getMaxTemperature()) ? this.getMaxTemperature() : new_temperature;
     }
 
     decrease_temperature(number) {
@@ -58,6 +58,10 @@ class Thermostat {
 
     set_max_temperature() {
         this.max_temperature = this.getPowerSafe() ? MAX_POWERSAFE_TEMP : MAX_NON_POWERSAFE_TEMP;
+        return this.getMaxTemperature();
+    }
+
+    getMaxTemperature() {
         return this.max_temperature;
     }
 
