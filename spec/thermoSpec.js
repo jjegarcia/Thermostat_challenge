@@ -18,10 +18,19 @@ describe("Thermostat", function () {
 
     describe('Can increase the temperature', function () {
         it('increase temperature', function () {
-            thermostat.increase_temperature(5);
-            expect(thermostat.increase_temperature(5)).toEqual(30);
+            thermostat.increase_temperature(1);
+            expect(thermostat.increase_temperature(2)).toEqual(23);
         });
     });
+
+    describe('it wont exceed the maximum temperature', () =>
+        it('the maximum temperature is 25', () => {
+                for (let i = 0; i < 11; i++) {
+                    thermostat.increase_temperature(3);
+                }
+            expect(thermostat.getTemperature()).toEqual(25)
+            }
+        ));
 
     describe('Can decrease the temperature', function () {
         it('decreases temperature', function () {
@@ -58,12 +67,11 @@ describe("Thermostat", function () {
     })
 
     it('clear powersafe mode', function () {
-
-        expect(thermostat.clear_powersafe()).toEqual(false);
+        expect(thermostat.togglePowersafe()).toEqual(false);
     })
 
     it('has max temp of 32 if not in powersafe mode', function () {
-        thermostat.clear_powersafe();
+        thermostat.togglePowersafe();
         expect(thermostat.set_max_temperature()).toEqual(32);
     })
 
