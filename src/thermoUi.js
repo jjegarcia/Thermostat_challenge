@@ -36,7 +36,7 @@ function downButtonHandler(diff) {
 }
 
 function togglePowersafe() {
-    let response = thermostat.togglePowersafe();
-    console.log("toggling:", response);
+    thermostat.togglePowersafe();
+    updateTemperature();
 }
 

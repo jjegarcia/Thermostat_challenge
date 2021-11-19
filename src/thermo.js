@@ -38,8 +38,12 @@ class Thermostat {
 
     increase_temperature(number) {
         const new_temperature = this.getTemperature() + number;
-        this.temperature = (new_temperature > this.max_temperature) ? this.max_temperature : new_temperature;
+        this.reviewTemperature(new_temperature);
         return this.getTemperature();
+    }
+
+    reviewTemperature(new_temperature) {
+        this.temperature = (new_temperature > this.max_temperature) ? this.max_temperature : new_temperature;
     }
 
     decrease_temperature(number) {
@@ -60,6 +64,7 @@ class Thermostat {
     togglePowersafe() {
         this.power_safe = !this.power_safe;
         this.set_max_temperature();
+        this.reviewTemperature(this.temperature);
         return this.getPowerSafe();
     }
 
@@ -81,4 +86,5 @@ class Thermostat {
         }
         return 'high';
     }
-}
+
+ }

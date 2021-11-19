@@ -28,7 +28,7 @@ describe("Thermostat", function () {
                 for (let i = 0; i < 11; i++) {
                     thermostat.increase_temperature(3);
                 }
-            expect(thermostat.getTemperature()).toEqual(25)
+                expect(thermostat.getTemperature()).toEqual(25)
             }
         ));
 
@@ -74,6 +74,15 @@ describe("Thermostat", function () {
         thermostat.togglePowersafe();
         expect(thermostat.set_max_temperature()).toEqual(32);
     })
+
+    it('needs update temperature if current temperature max temperature', () => {
+            thermostat.togglePowersafe();
+            thermostat.increase_temperature(12);
+            thermostat.togglePowersafe();
+            expect(thermostat.temperature).toEqual(25);
+        }
+    )
+
 
     describe('You can reset the temperature to 20 with a reset function', function () {
 
