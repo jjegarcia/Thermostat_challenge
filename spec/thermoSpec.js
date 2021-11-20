@@ -104,8 +104,8 @@ describe("Thermostat", function () {
         })
 
         it('25+ is high-usage', function () {
-            thermostat.temperature = 22;
-            expect(thermostat.energy_usage()).toEqual('medium');
+            thermostat.temperature = 29;
+            expect(thermostat.energy_usage()).toEqual('high');
         })
     })
 
