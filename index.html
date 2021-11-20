@@ -23,26 +23,30 @@
     <button id="down_button"> &#x25BC;</button>
 </div>
 <br>
-<label for="temperature">Target Temperature:</label><input id="temperature" type="text" value=20 readonly="readonly"> <br>
+<h1>Target temperature: <span id="temperature">20</span></h1>
 <div class="middle">
     <div class="bar-container">
         <div class="bar"></div>
     </div>
 </div>
-
 <br>
-<div>
+<section>
     <h2>PowerSafe</h2>
     <label id="powersafe_switch" class="switch">
         <input type="checkbox" checked>
         <span class="slider round"></span>
     </label>
-</div>
-
-<section>
-    <h1>Current temperature: <span id="current-temperature"></span></h1>
 </section>
 
+<section>
+    <h1>Current temperature: <span id="current-temperature">20</span></h1>
+    <select id="current-city">
+        <option value="London">London</option>
+        <option value="New york">New York</option>
+        <option value="Paris">Paris</option>
+        <option value="Tokyo">Tokyo</option>
+    </select>
+</section>
 
 <script src="src/thermo.js"></script>
 <script src="src/thermoUi.js"></script>

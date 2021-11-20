@@ -1,7 +1,7 @@
 const DEFAULT_DIFF_VALUE = 1;
 thermostat = new Thermostat()
 let temperature_bar = document.querySelector('.bar');
-let ui_temp = document.getElementById("temperature");
+let ui_temp = document.querySelector("#temperature");
 let diff = document.querySelector('#diff');
 let diffValue = DEFAULT_DIFF_VALUE;
 let up_button = document.getElementById("up_button");
@@ -24,7 +24,7 @@ function updateDiff(value) {
 }
 
 function updateTemperature() {
-    ui_temp.value = thermostat.getTemperature();
+    ui_temp.innerText  = thermostat.getTemperature();
     updateBar();
 }
 
