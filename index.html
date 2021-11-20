@@ -8,6 +8,7 @@
 
 </head>
 <body>
+
 <div>
     <button id="up_button"> &#9650;</button>
     <br>
@@ -22,6 +23,7 @@
     </div>
     <button id="down_button"> &#x25BC;</button>
 </div>
+
 <br>
 <h1>Target temperature: <span id="temperature">20</span></h1>
 <div class="middle">
@@ -29,14 +31,18 @@
         <div class="bar"></div>
     </div>
 </div>
-<br>
-<section>
-    <h2>PowerSafe</h2>
-    <label id="powersafe_switch" class="switch">
-        <input type="checkbox" checked>
-        <span class="slider round"></span>
-    </label>
-</section>
+
+<br><br>
+
+<tr>
+    <th><h2>PowerSafe</h2></th>
+    <th>
+        <label id="powersafe_switch" class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+        </label>
+    </th>
+</tr>
 
 <section>
     <h1>Current temperature: <span id="current-temperature">20</span></h1>
