@@ -16,26 +16,6 @@ class Thermostat {
         this.max_temperature = MAX_POWERSAFE_TEMP;
     }
 
-// getMyGauge() {
-    //     return Gauge(document.getElementById("gauge-demo"), {
-    //         dialRadius: 40,
-    //         dialStartAngle: 135,
-    //         dialEndAngle: 45,
-    //         value: 0,
-    //         max: 100,
-    //         min: 0,
-    //         valueDialClass: "value",
-    //         valueClass: "value-text",
-    //         dialClass: "dial",
-    //         gaugeClass: "gauge",
-    //         showValue: true,
-    //         gaugeColor: null,
-    //         label: function (val) {
-    //             return Math.round(val);
-    //         } // returns a string label that will be rendered in the center
-    //     });
-    // }
-
     increase_temperature(number) {
         const new_temperature = this.getTemperature() + number;
         this.reviewTemperature(new_temperature);
