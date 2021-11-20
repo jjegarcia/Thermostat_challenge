@@ -47,30 +47,24 @@ function updateBar() {
 }
 
 function updateBarColor() {
-    console.log('usage',thermostat.energy_usage());
     switch (thermostat.energy_usage()) {
         case ('low') : {
             temperature_bar.style.backgroundColor = 'green';
-            console.log('green:',thermostat.getTemperature());
             break;
         }
         case ('medium') : {
             temperature_bar.style.backgroundColor = 'orange';
-            console.log('orange:',thermostat.getTemperature());
             break;
         }
         case ('high') : {
             temperature_bar.style.backgroundColor = 'red';
-            console.log('red:',thermostat.getTemperature());
             break;
         }
         default :
-            temperature_bar.style.backgroundColor = 'blue';
-            console.log('blue:',thermostat.getTemperature());
-
+            temperature_bar.style.backgroundColor = '#f1f1f1'
     }
 }
 
 function updateBarLength() {
-
+    temperature_bar.style.width = thermostat.getTemperature().toString() + "%"
 }

@@ -23,7 +23,7 @@
     <button id="down_button"> &#x25BC;</button>
 </div>
 <br>
-<label for="temperature">Temperature:</label><input id="temperature" type="text" value=20 readonly="readonly"> <br>
+<label for="temperature">Target Temperature:</label><input id="temperature" type="text" value=20 readonly="readonly"> <br>
 <div class="middle">
     <div class="bar-container">
         <div class="bar"></div>
@@ -38,7 +38,15 @@
         <span class="slider round"></span>
     </label>
 </div>
+
+<section>
+    <h1>Current temperature: <span id="current-temperature"></span></h1>
+</section>
+
+
 <script src="src/thermo.js"></script>
 <script src="src/thermoUi.js"></script>
+<script src="src/weather.js"></script>
+
 </body>
 </html>

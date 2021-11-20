@@ -1,7 +1,7 @@
 .middle {
     margin-top:10px;
     float: left;
-    width: 80%;
+    width: 25%;
 }
 
 /* Place text to the right */
@@ -25,10 +25,10 @@
 }
 
 /* Individual bars */
-.bar{width: 90%; height: 18px; background-color: #04AA6D;}
+.bar{width: 90.7%; height: 18px; background-color: #04AA6D;}
 
 /* Responsive layout - make the columns stack on top of each other instead of next to each other */
-@media (max-width: 400px) {
+@media (max-width: 40px) {
     .side, .middle {
         width: 100%;
     }

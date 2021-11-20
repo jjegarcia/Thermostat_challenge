@@ -85,7 +85,7 @@ class Thermostat {
         if (this.getTemperature() < LOW_USAGE_THRESHOLD) {
             return 'low';
         }
-        if (( this.getTemperature()>=LOW_USAGE_THRESHOLD) && (this.getTemperature() < HIGH_USAGE_THRESHOLD)) {
+        if ((this.getTemperature() >= LOW_USAGE_THRESHOLD) && (this.getTemperature() < HIGH_USAGE_THRESHOLD)) {
             return 'medium';
         }
         return 'high';

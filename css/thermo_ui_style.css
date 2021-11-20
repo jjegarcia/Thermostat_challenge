@@ -58,6 +58,6 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-#file {
-    color: green;
+.temperature{
+    max-width: 4px;
 }
