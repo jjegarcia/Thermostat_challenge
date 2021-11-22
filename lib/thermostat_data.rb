@@ -1,0 +1,3 @@
+class ThermostatData
+
+end

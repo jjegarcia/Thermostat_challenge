@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thermostat</title>
+  <link rel="stylesheet" href="./css/thermo_ui_style.css">
+  <link rel="stylesheet" href="./css/bar_style.css">
+
+</head>
+<body>
+
+<div>
+  <button id="up_button"> &#9650;</button>
+  <br>
+  <div>
+    <label for="diff"></label><select id="diff">
+    <option value=1>1</option>
+    <option value=2>2</option>
+    <option value=3>3</option>
+    <option value=4>4</option>
+    <option value=5>5</option>
+  </select>
+  </div>
+  <button id="down_button"> &#x25BC;</button>
+</div>
+
+<br>
+<h1>Target temperature: <span id="temperature">20</span></h1>
+<div class="middle">
+  <div class="bar-container">
+    <div class="bar"></div>
+  </div>
+</div>
+
+<br><br>
+
+<tr>
+  <th><h2>PowerSafe</h2></th>
+  <th>
+    <label id="powersafe_switch" class="switch">
+      <input type="checkbox" checked>
+      <span class="slider round"></span>
+    </label>
+  </th>
+</tr>
+
+<section>
+  <h1>Current temperature: <span id="current-temperature">20</span></h1>
+  <select id="current-city">
+    <option value="London">London</option>
+    <option value="New york">New York</option>
+    <option value="Paris">Paris</option>
+    <option value="Tokyo">Tokyo</option>
+  </select>
+</section>
+
+<script src="src/thermo.js"></script>
+<script src="src/thermoUi.js"></script>
+<script src="src/weather.js"></script>
+
+</body>
+</html>

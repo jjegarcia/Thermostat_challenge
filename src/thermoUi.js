@@ -1,13 +1,13 @@
 const DEFAULT_DIFF_VALUE = 1;
-thermostat = new Thermostat()
-let temperature_bar = document.querySelector('.bar');
 let ui_temp = document.querySelector("#temperature");
+let temperature_bar = document.querySelector('.bar');
 let diff = document.querySelector('#diff');
 let diffValue = DEFAULT_DIFF_VALUE;
 let up_button = document.getElementById("up_button");
 let down_button = document.getElementById("down_button");
 let powersafe_switch = document.getElementById("powersafe_switch")
 let buttons = document.getElementsByTagName('button');
+thermostat = new Thermostat()
 
 updateTemperature();
 for (let i = 0; i < buttons.length; i++) {
